@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'images/breast image.jpg' %}");
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header styling */
+        
+        .header {
+            background-color: #ff4081;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Image container with controlled height */
+        
+        .image-container {
+            width: 100%;
+            height: 45vh;
+            /* 45% of the viewport height */
+            overflow: hidden;
+        }
+        
+        .image-container img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        /* Custom button styling */
+        
+        .btn-custom {
+            background-color: white;
+            color: #f50057;
+            border: 2px solid #f50057;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            padding: 10px;
+            margin: 10px;
+            /* Adjusted margin for spacing */
+            flex: 1;
+            /* Make all buttons equal width */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: #f50057;
+            color: white;
+        }
+        /* Flexbox for vertical centering and content scaling */
+        
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Centered buttons */
+            flex-grow: 1;
+            /* Allow content to grow */
+            margin-top: 10%;
+        }
+        /* Button container to align buttons in a row */
+        
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            width: 40%;
+            /* Full width */
+        }
+        /* Footer styling */
+        
+        footer {
+            background-color: #f50057;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        Breast Cancer Awareness
+    </div>
+
+    <!-- Image -->
+    <!-- <div class="image-container">
+        <img src="{% static 'images/breast image.jpg' %}" alt="Breast Self Exam">
+    </div> -->
+
+    <!-- Buttons -->
+    <div class="content text-center">
+        <div class="button-container">
+            <button class="btn btn-custom">Facts</button>
+            <button class="btn btn-custom">Myths</button>
+            <button class="btn btn-custom">Benign Lumps</button>
+            <button class="btn btn-custom" data-url="{% url 'predict' %}" onclick="window.location.href=this.getAttribute('data-url')">Diagnosis</button>
+            <button class="btn btn-custom">Breast Self Exam</button>
+            <button class="btn btn-custom">Prevention</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Breast Cancer Awareness
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
