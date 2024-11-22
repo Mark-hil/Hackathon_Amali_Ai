@@ -1,4 +1,4 @@
-{% comment %} 
+
 <!DOCTYPE html>
 <html>
 <head><title>Prediction Result</title></head>
@@ -7,10 +7,10 @@
     <p>{{ prediction }}</p>
     <a href="{% url 'upload_image' %}">Upload another image</a>
 </body>
-</html> {% endcomment %}
+</html> 
 
 
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html>
 <head>
     <title>Prediction Result</title>
@@ -20,4 +20,4 @@
     <p>The uploaded image is predicted to be: <strong>{{ prediction }}</strong></p>
     <a href="{% url 'upload_image' %}">Upload another image</a>
 </body>
-</html>
+</html> {% endcomment %}
