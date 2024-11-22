@@ -153,3 +153,4 @@ Werkzeug==3.0.3
 whitenoise==6.8.2
 wrapt==1.16.0
 XlsxWriter==3.2.0
+gunicorn

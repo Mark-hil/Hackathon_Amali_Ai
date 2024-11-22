@@ -36,4 +36,6 @@ COPY . /myapp/
 EXPOSE 80
 
 # Set the default command to run when the container starts
-CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
+
+CMD ["gunicorn", "djangoBreastDetection.wsgi.application", "--bind", "0.0.0.0:8000"]
