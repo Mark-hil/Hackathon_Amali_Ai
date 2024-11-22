@@ -31,3 +31,4 @@ python manage.py runserver
 
 # Model Information
 The app uses a deep learning model trained on public breast cancer datasets (e.g., BUSI, IDC_regular_ps50_idx5) to classify images into benign and malignant categories.
+# Hackathon_Amali_Ai
