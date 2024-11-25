@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ne86ra*4@10o3vussslz^gosiopf^)66le$5rl--^9dfm##p0b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://breast-cancer-detection-vckt.onrender.com','localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['breast-cancer-detection-vckt.onrender.com','localhost', '127.0.0.1']
 CORS_ALLOW_ALL_ORIGINS = True
 
 
