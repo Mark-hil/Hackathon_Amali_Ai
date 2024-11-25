@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ne86ra*4@10o3vussslz^gosiopf^)66le$5rl--^9dfm##p0b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
+ALLOWED_HOSTS = ['https://breast-cancer-detection-vckt.onrender.com', '127.0.0.1', '*']
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 # Application definition
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'basicConcepts'
+    'basicConcepts',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoBreastDetection.urls'
