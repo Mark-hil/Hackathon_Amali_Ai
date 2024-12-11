@@ -33,9 +33,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /myapp/
 
 # Expose port 8000 (Django default port)
-EXPOSE 80
+EXPOSE 8000
 
 # Set the default command to run when the container starts
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
 
-CMD ["gunicorn", "djangoBreastDetection.wsgi.application", "--bind", "0.0.0.0:8000"]
+# CMD ["gunicorn", "djangoBreastDetection.wsgi.application", "--bind", "0.0.0.0:8000"]
+
+# CMD ["gunicorn", "djangoBreastDetection.wsgi:application", "--bind", "0.0.0.0:8000"]
+
+CMD ["gunicorn", "djangoBreastDetection.wsgi:application", "--workers=1", "--threads=2", "--bind", "0.0.0.0:8000"]
